@@ -25,7 +25,8 @@ export const signin = async (req, res, next) => {
         const validPassword = await bcryptjs.compare(password, user.password);
         if(!validPassword) return next(errorHandler(404, 'Password is incorrect'));
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET);
-        res.cookie('access_token', token, {httpOnly: true}).status(200).json(user);
+        const {password: pass, ...userInfo} = user._doc;
+        res.cookie('access_token', token, {httpOnly: true}).status(200).json(userInfo);
     } catch (error) {
         next(error);
     }

@@ -2,7 +2,9 @@
 
 const SignIn = () => {
   return (
-    <div>SignIn</div>
+    <div>
+      <h1 className="text-3xl text-center my-7 font-semibold">SignIn</h1>
+    </div>
   )
 }
 

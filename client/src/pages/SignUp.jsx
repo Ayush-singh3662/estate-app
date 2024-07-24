@@ -12,7 +12,6 @@ const SignUp = () => {
       [e.target.id]: e.target.value
     });
   }
-  console.log(formData);
 
   const handleSubmit = async (e) => {
     try {

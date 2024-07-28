@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js";
 import signUpRouter from './routes/auth.route.js';
 import cookieParser from "cookie-parser";
+import createListingRouter from './routes/listing.route.js';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.get("/", (req, res) => res.send("Hii"));
 
 app.use("/api/user", userRouter);
 app.use('/api/auth', signUpRouter);
+app.use('/api/listing', createListingRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;

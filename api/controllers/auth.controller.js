@@ -19,7 +19,7 @@ export const signup = async (req, res, next) => {
 
 export const signin = async (req, res, next) => {
     try {
-        const {email, password} = req.body;
+        const {password, email} = req.body;
         const user = await User.findOne({email});
         if(!user) return next(errorHandler(404, 'No such user exists'));
         const validPassword = await bcryptjs.compare(password, user.password);

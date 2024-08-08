@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { useEffect, useRef, useState } from "react";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
-import { app } from "../../firebase";
+import { app } from "../firebase.js";
 import { updateUserStart, updateUserSuccess, updateUserFailure, deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutFailure, signOutStart, signOutSuccess } from "../redux/user/userSlice.js";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -188,7 +188,7 @@ const handleListingDelete = async (listingId) => {
 
               <div className='flex flex-col item-center'>
                 <button onClick={() => handleListingDelete(listing._id)} className='text-red-700 uppercase'>Delete</button>
-                <button className='text-green-700 uppercase'>Edit</button>
+                <Link to={`/update-listing/${listing._id}`} ><button className='text-green-700 uppercase'>Edit</button></Link>
               </div>
             </div>
           ))}

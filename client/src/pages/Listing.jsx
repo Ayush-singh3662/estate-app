@@ -13,9 +13,9 @@ import {
   FaShare,
 } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
-import Contact from '../components/Contacts';
+import Contact from '../components/Contact';
 
-export default function Listing() {
+const Listing = () => {
   SwiperCore.use([Navigation]);
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -140,3 +140,5 @@ export default function Listing() {
     </main>
   );
 }
+
+export default Listing;

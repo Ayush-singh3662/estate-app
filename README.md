@@ -58,6 +58,13 @@ Add the following variables:
 MONGO_URL=your_mongo_uri
 JWT_SECRET=your_jwt_secret
 ```
+
+Create a .env file in the client directory.
+Add the following variables:
+```
+VITE_FIREBASE_API_KEY=your_vite_firebase_api_key
+```
+
 ## Configuration
 ### 1. Firebase Configuration:
 Go to the Firebase console and create a new project.
